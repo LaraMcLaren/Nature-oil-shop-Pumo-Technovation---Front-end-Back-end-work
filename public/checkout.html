@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - Sri Velva Naturals</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <div class="nav">
+          <a class="brand" href="index.html" aria-label="Sri Velva Naturals Home">
+            <img src="/images/Logo.jpeg" alt="Sri Velva Naturals" />
+            <div class="brandText">
+              Sri Velva Naturals
+              <small>Pure • Natural • Cold Pressed Oils</small>
+            </div>
+          </a>
+
+          <button class="btn hamburger" type="button" data-hamburger aria-label="Open menu">
+            <span class="hamburgerLines"><span></span><span></span><span></span></span>
+          </button>
+
+          <nav class="navLinks" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin.html">Manage Menu</a>
+            <a class="btn btn-ghost" href="checkout.html" aria-label="Go to checkout">
+              <span class="cartMini">
+                Cart
+                <span class="cartCount" data-cart-count>0</span>
+              </span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="mobileMenu" data-mobile-menu>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="products.html">Products</a>
+          <a href="contact.html">Contact</a>
+          <a href="admin.html">Manage Menu</a>
+          <a href="checkout.html">Checkout</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="card fadeIn" style="padding:18px;">
+            <h1 style="margin:0; font-family:'Playfair Display', serif;">Checkout</h1>
+            <p class="muted" style="margin:8px 0 0; line-height:1.8;">
+              Review your order summary, enter your details, and place order. Bill will be printed from backend order data.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top:0;">
+        <div class="container">
+          <div class="grid2" style="align-items:start;">
+            <div class="card fadeIn" style="padding:18px;">
+              <h2 style="margin:0 0 10px; font-family:'Playfair Display', serif;">Order Summary</h2>
+              <div id="summaryEmpty" class="muted">Your cart is empty.</div>
+              <div id="summaryBox" style="display:none;">
+                <div id="summaryItems"></div>
+                <div class="hr"></div>
+                <div style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
+                  <div class="muted" style="font-weight:800;">Total</div>
+                  <div style="font-size:20px; font-weight:900;" id="summaryTotal">₹ 0</div>
+                </div>
+                <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;">
+                  <button class="btn btn-ghost" type="button" id="btnClearCart">Clear Cart</button>
+                  <button class="btn btn-primary" type="button" id="btnPlaceOrder">Place Order</button>
+                </div>
+              </div>
+              <div class="muted" id="checkoutError" style="margin-top:10px; color:#9B1C1C; font-weight:700;"></div>
+            </div>
+
+            <div class="card fadeIn" style="padding:18px;">
+              <h2 style="margin:0 0 10px; font-family:'Playfair Display', serif;">Your Details</h2>
+              <div class="formGrid">
+                <div class="field">
+                  <label for="cName">Name</label>
+                  <input id="cName" type="text" placeholder="Customer name" />
+                </div>
+                <div class="field">
+                  <label for="cPhone">Phone</label>
+                  <input id="cPhone" type="text" placeholder="Customer phone number" />
+                </div>
+              </div>
+              <div class="field" style="margin-top:14px;">
+                <label for="cAddress">Address</label>
+                <textarea id="cAddress" placeholder="Delivery address"></textarea>
+              </div>
+              <div class="muted" style="margin-top:12px; line-height:1.7;">
+                After placing order, you will get a Pay QR + print-ready bill.
+              </div>
+              <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
+                <a class="btn btn-ghost" href="products.html">Back to Products</a>
+                <a class="btn btn-gold" href="contact.html">Need help? WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="section" style="padding-top:18px;">
+      <div class="container">
+        <div class="card" style="padding:18px;">
+          <div class="muted">© <span id="yearNow"></span> Sri Velva Naturals. All rights reserved.</div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/checkout.js"></script>
+    <script>
+      document.getElementById("yearNow").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
+

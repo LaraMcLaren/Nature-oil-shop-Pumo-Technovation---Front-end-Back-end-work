@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Menu - Sri Velva Naturals</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <div class="nav">
+          <a class="brand" href="index.html" aria-label="Sri Velva Naturals Home">
+            <img src="/images/Logo.jpeg" alt="Sri Velva Naturals" />
+            <div class="brandText">
+              Sri Velva Naturals
+              <small>Pure • Natural • Cold Pressed Oils</small>
+            </div>
+          </a>
+
+          <button class="btn hamburger" type="button" data-hamburger aria-label="Open menu">
+            <span class="hamburgerLines"><span></span><span></span><span></span></span>
+          </button>
+
+          <nav class="navLinks" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin.html">Manage Menu</a>
+            <a class="btn btn-ghost" href="checkout.html" aria-label="Go to checkout">
+              <span class="cartMini">
+                Cart
+                <span class="cartCount" data-cart-count>0</span>
+              </span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="mobileMenu" data-mobile-menu>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="products.html">Products</a>
+          <a href="contact.html">Contact</a>
+          <a href="admin.html">Manage Menu</a>
+          <a href="checkout.html">Checkout</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="card fadeIn" style="padding:18px;">
+            <h1 style="margin:0; font-family:'Playfair Display', serif;">Manage Menu</h1>
+            <p class="muted" style="margin:8px 0 0; line-height:1.8;">
+              Create, edit, and soft-delete products. Orders and monthly reports are saved on the backend.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top:0;">
+        <div class="container">
+          <div class="grid2" style="align-items:start;">
+            <div class="card fadeIn" style="padding:18px;">
+              <h2 style="margin:0 0 10px; font-family:'Playfair Display', serif;">Products</h2>
+              <div style="overflow:auto;">
+                <table class="table" id="productsTable">
+                  <thead>
+                    <tr>
+                      <th>Image</th>
+                      <th>Name</th>
+                      <th>Category</th>
+                      <th>Price</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+              <div class="muted" style="margin-top:10px;">Tip: Delete hides the product from customers (soft delete).</div>
+            </div>
+
+            <div class="card fadeIn" style="padding:18px;">
+              <h2 style="margin:0 0 10px; font-family:'Playfair Display', serif;">Add / Edit Product</h2>
+              <input type="hidden" id="productId" />
+              <div class="formGrid">
+                <div class="field">
+                  <label for="pName">Name</label>
+                  <input id="pName" type="text" placeholder="Product name" />
+                </div>
+                <div class="field">
+                  <label for="pCategory">Category</label>
+                  <select id="pCategory" style="width:100%; padding:12px; border-radius:14px; border:1px solid rgba(47,93,58,.18); background: rgba(255,255,255,.85);">
+                    <option value="oils">Oils</option>
+                    <option value="skin">Skin Care</option>
+                    <option value="hair">Hair Care</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="pPrice">Price (INR)</label>
+                  <input id="pPrice" type="number" min="1" placeholder="e.g., 499" />
+                </div>
+                <div class="field">
+                  <label for="pImage">Image</label>
+                  <input id="pImage" type="file" accept="image/*" />
+                </div>
+              </div>
+              <div class="field" style="margin-top:14px;">
+                <label for="pDesc">Description</label>
+                <textarea id="pDesc" placeholder="Short product description"></textarea>
+              </div>
+
+              <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;">
+                <button class="btn btn-primary" type="button" id="btnCreate">Add Product</button>
+                <button class="btn btn-gold" type="button" id="btnUpdate">Update Product</button>
+                <button class="btn btn-ghost" type="button" id="btnDelete">Delete</button>
+              </div>
+              <div class="muted" style="margin-top:10px;" id="adminStatus"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top:0;">
+        <div class="container">
+          <div class="card fadeIn" style="padding:18px;">
+            <h2 style="margin:0 0 10px; font-family:'Playfair Display', serif;">Monthly Sales Report</h2>
+            <div class="grid2" style="align-items:end;">
+              <div class="field">
+                <label for="rYear">Year</label>
+                <select id="rYear" style="width:100%; padding:12px; border-radius:14px; border:1px solid rgba(47,93,58,.18); background: rgba(255,255,255,.85);"></select>
+              </div>
+              <div class="field">
+                <label for="rMonth">Month</label>
+                <select id="rMonth" style="width:100%; padding:12px; border-radius:14px; border:1px solid rgba(47,93,58,.18); background: rgba(255,255,255,.85);"></select>
+              </div>
+            </div>
+            <div style="margin-top:12px; display:flex; gap:12px; flex-wrap:wrap;">
+              <button class="btn btn-primary" type="button" id="btnFetchReport">Get Report</button>
+              <a class="btn btn-ghost" href="products.html">Back to Shop</a>
+            </div>
+
+            <div class="hr"></div>
+
+            <div class="grid3">
+              <div class="pill" style="border-radius:16px;"><strong id="repTotalOrders">0</strong><span class="muted">Orders</span></div>
+              <div class="pill" style="border-radius:16px;"><strong id="repTotalRevenue">0</strong><span class="muted">Revenue (INR)</span></div>
+              <div class="pill" style="border-radius:16px;"><strong id="repAvg">0</strong><span class="muted">Avg Order</span></div>
+            </div>
+
+            <div class="hr"></div>
+
+            <div class="grid2" style="align-items:start;">
+              <div>
+                <h3 style="margin:0 0 10px; font-family:'Playfair Display', serif;">Orders</h3>
+                <div style="overflow:auto;">
+                  <table class="table" id="ordersTable">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>Customer</th>
+                        <th>Total</th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+              </div>
+              <div>
+                <h3 style="margin:0 0 10px; font-family:'Playfair Display', serif;">By Category</h3>
+                <div id="breakdownBox" class="muted">No data yet.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="section" style="padding-top:18px;">
+      <div class="container">
+        <div class="card" style="padding:18px;">
+          <div class="muted">© <span id="yearNow"></span> Sri Velva Naturals. All rights reserved.</div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/admin.js"></script>
+  </body>
+</html>
+

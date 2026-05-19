@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Sri Velva Naturals</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <div class="nav">
+          <a class="brand" href="index.html" aria-label="Sri Velva Naturals Home">
+            <img src="/images/Logo.jpeg" alt="Sri Velva Naturals" />
+            <div class="brandText">
+              Sri Velva Naturals
+              <small>Pure • Natural • Cold Pressed Oils</small>
+            </div>
+          </a>
+
+          <button class="btn hamburger" type="button" data-hamburger aria-label="Open menu">
+            <span class="hamburgerLines"><span></span><span></span><span></span></span>
+          </button>
+
+          <nav class="navLinks" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin.html">Manage Menu</a>
+            <a class="btn btn-ghost" href="checkout.html" aria-label="Go to checkout">
+              <span class="cartMini">
+                Cart
+                <span class="cartCount" data-cart-count>0</span>
+              </span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="mobileMenu" data-mobile-menu>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="products.html">Products</a>
+          <a href="contact.html">Contact</a>
+          <a href="admin.html">Manage Menu</a>
+          <a href="checkout.html">Checkout</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="grid2">
+            <div class="card fadeIn" style="padding:18px;">
+              <h1 style="margin:0 0 10px; font-family:'Playfair Display', serif;">Our Story</h1>
+              <p class="muted" style="line-height:1.9; margin:0;">
+                Sri Velva Naturals is built on a simple belief: skincare and haircare should be
+                rooted in purity. That is why we focus on cold pressed oils and chemical-free
+                care—designed for daily use and premium results.
+              </p>
+              <div class="hr"></div>
+              <p class="muted" style="line-height:1.9; margin:0;">
+                We combine tradition with quality control, ensuring every product feels gentle,
+                nourishing, and trustworthy.
+              </p>
+            </div>
+
+            <div class="card fadeIn" style="padding:18px;">
+              <h2 style="margin:0 0 10px; font-family:'Playfair Display', serif;">Mission & Values</h2>
+              <div class="grid2" style="gap:12px;">
+                <div class="pill"><strong>Pure</strong> <span class="muted">Natural ingredients</span></div>
+                <div class="pill"><strong>Chemical-Free</strong> <span class="muted">No harsh additives</span></div>
+                <div class="pill"><strong>Cold Pressed</strong> <span class="muted">Gentle extraction</span></div>
+                <div class="pill"><strong>Trusted Care</strong> <span class="muted">Premium experience</span></div>
+              </div>
+              <div class="hr"></div>
+              <div class="pill" style="padding:14px 16px; border-radius:16px;">
+                <strong style="font-family:'Playfair Display', serif;">Order via WhatsApp</strong>
+                <span class="muted">Fast, easy, and personal support.</span>
+              </div>
+              <div style="margin-top:12px;">
+                <a class="btn btn-gold" href="contact.html">Chat Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="section" style="padding-bottom:0;">
+            <div class="grid3">
+              <div class="card fadeIn" style="padding:18px;">
+                <h3 style="margin:0 0 8px; font-family:'Playfair Display', serif;">Chemical-Free</h3>
+                <p class="muted" style="margin:0; line-height:1.7;">
+                  Focused on purity and gentle care for everyday use.
+                </p>
+              </div>
+              <div class="card fadeIn" style="padding:18px;">
+                <h3 style="margin:0 0 8px; font-family:'Playfair Display', serif;">Cold Pressed</h3>
+                <p class="muted" style="margin:0; line-height:1.7;">
+                  Traditional extraction to keep the natural goodness.
+                </p>
+              </div>
+              <div class="card fadeIn" style="padding:18px;">
+                <h3 style="margin:0 0 8px; font-family:'Playfair Display', serif;">Premium Results</h3>
+                <p class="muted" style="margin:0; line-height:1.7;">
+                  A trusted organic brand feel with quality at the core.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="section" style="padding-top:18px;">
+      <div class="container">
+        <div class="card" style="padding:18px;">
+          <div class="grid2" style="align-items:center;">
+            <div>
+              <div class="muted">WhatsApp</div>
+              <div style="font-weight:800; margin-top:6px;">+91 9629655289</div>
+              <div class="muted" style="margin-top:6px;">Pure, Natural, Chemical-Free.</div>
+            </div>
+            <div style="display:flex; gap:12px; justify-content:flex-end; flex-wrap:wrap;">
+              <a class="btn btn-primary" href="products.html">Shop Now</a>
+              <a class="btn btn-gold" href="contact.html">Order via WhatsApp</a>
+            </div>
+          </div>
+          <div style="margin-top:14px;" class="muted">© <span id="yearNow"></span> Sri Velva Naturals. All rights reserved.</div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script>
+      document.getElementById("yearNow").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
+

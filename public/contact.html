@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Sri Velva Naturals</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <div class="nav">
+          <a class="brand" href="index.html" aria-label="Sri Velva Naturals Home">
+            <img src="/images/Logo.jpeg" alt="Sri Velva Naturals" />
+            <div class="brandText">
+              Sri Velva Naturals
+              <small>Pure • Natural • Cold Pressed Oils</small>
+            </div>
+          </a>
+
+          <button class="btn hamburger" type="button" data-hamburger aria-label="Open menu">
+            <span class="hamburgerLines"><span></span><span></span><span></span></span>
+          </button>
+
+          <nav class="navLinks" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin.html">Manage Menu</a>
+            <a class="btn btn-ghost" href="checkout.html" aria-label="Go to checkout">
+              <span class="cartMini">
+                Cart
+                <span class="cartCount" data-cart-count>0</span>
+              </span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="mobileMenu" data-mobile-menu>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="products.html">Products</a>
+          <a href="contact.html">Contact</a>
+          <a href="admin.html">Manage Menu</a>
+          <a href="checkout.html">Checkout</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="grid2">
+            <div class="card fadeIn" style="padding:18px;">
+              <h1 style="margin:0 0 10px; font-family:'Playfair Display', serif;">Get in Touch</h1>
+              <p class="muted" style="margin:0; line-height:1.9;">
+                For product recommendations, offers, and fast ordering support—chat with us on WhatsApp.
+              </p>
+              <div class="hr"></div>
+
+              <div class="pill" style="padding:14px 16px; border-radius:16px; margin-bottom:12px;">
+                <strong>WhatsApp</strong> <span class="muted">+91 9629655289</span>
+              </div>
+
+              <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                <a class="btn btn-gold" id="waChatBtn" href="#" target="_blank" rel="noopener">Order via WhatsApp</a>
+                <a class="btn btn-primary" href="products.html">Browse Products</a>
+              </div>
+            </div>
+
+            <div class="card fadeIn" style="padding:18px;">
+              <h2 style="margin:0 0 8px; font-family:'Playfair Display', serif;">Quick Order</h2>
+              <p class="muted" style="margin:0 0 14px; line-height:1.8;">
+                Select a product on the website and tap “Order via WhatsApp” for a pre-filled message.
+              </p>
+              <div class="grid3" style="grid-template-columns: repeat(2, minmax(0,1fr)); gap:12px;">
+                <div class="pill"><strong>Fast</strong> <span class="muted">Instant</span></div>
+                <div class="pill"><strong>Easy</strong> <span class="muted">Pre-filled</span></div>
+                <div class="pill"><strong>Premium</strong> <span class="muted">Trusted</span></div>
+                <div class="pill"><strong>Real-Time</strong> <span class="muted">Live business</span></div>
+              </div>
+              <div class="hr"></div>
+              <div class="muted">
+                Note: Checkout orders are recorded for monthly sales reports.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="section" style="padding-top:18px;">
+      <div class="container">
+        <div class="card" style="padding:18px;">
+          <div class="grid2" style="align-items:center;">
+            <div>
+              <div class="muted">Sri Velva Naturals</div>
+              <div style="font-weight:800; margin-top:6px;">Pure, Natural, Chemical-Free</div>
+            </div>
+            <div style="display:flex; gap:12px; justify-content:flex-end; flex-wrap:wrap;">
+              <a class="btn btn-primary" href="index.html">Back to Home</a>
+              <a class="btn btn-gold" href="products.html">Order Now</a>
+            </div>
+          </div>
+          <div style="margin-top:14px;" class="muted">© <span id="yearNow"></span> Sri Velva Naturals. All rights reserved.</div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script>
+      const WA_PHONE = "919629655289";
+      const btn = document.getElementById("waChatBtn");
+      const msg = "Hi Sri Velva Naturals, I need help with product selection and ordering.";
+      if (btn) btn.href = "https://wa.me/" + WA_PHONE + "?text=" + encodeURIComponent(msg);
+      document.getElementById("yearNow").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
+

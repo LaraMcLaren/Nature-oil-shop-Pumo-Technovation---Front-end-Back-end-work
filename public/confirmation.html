@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmation - Sri Velva Naturals</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <div class="nav">
+          <a class="brand" href="index.html" aria-label="Sri Velva Naturals Home">
+            <img src="/images/Logo.jpeg" alt="Sri Velva Naturals" />
+            <div class="brandText">
+              Sri Velva Naturals
+              <small>Pure • Natural • Cold Pressed Oils</small>
+            </div>
+          </a>
+
+          <button class="btn hamburger" type="button" data-hamburger aria-label="Open menu">
+            <span class="hamburgerLines"><span></span><span></span><span></span></span>
+          </button>
+
+          <nav class="navLinks" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin.html">Manage Menu</a>
+            <a class="btn btn-ghost" href="checkout.html" aria-label="Go to checkout">
+              <span class="cartMini">
+                Cart
+                <span class="cartCount" data-cart-count>0</span>
+              </span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="mobileMenu" data-mobile-menu>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="products.html">Products</a>
+          <a href="contact.html">Contact</a>
+          <a href="admin.html">Manage Menu</a>
+          <a href="checkout.html">Checkout</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="card fadeIn" style="padding:18px;">
+            <h1 style="margin:0; font-family:'Playfair Display', serif;">Thank you! Order Confirmed</h1>
+            <p class="muted" id="orderConfirmLine" style="margin:8px 0 0; line-height:1.8;">Loading your order...</p>
+            <div class="hr"></div>
+
+            <div class="noPrint" style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:14px;">
+              <button class="btn btn-gold" type="button" id="btnPayNow">Pay now (QR)</button>
+              <button class="btn btn-primary" type="button" id="btnPrint">Bill print</button>
+              <a class="btn btn-ghost" href="products.html">Continue Shopping</a>
+            </div>
+
+            <div class="card printInvoice" style="padding:18px;">
+              <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+                <img src="/images/Logo.jpeg" alt="Sri Velva Naturals" style="width:60px;height:60px;border-radius:16px;object-fit:cover;" />
+                <div>
+                  <div style="font-family:'Playfair Display', serif; font-weight:900; font-size:20px;">Sri Velva Naturals</div>
+                  <div class="muted">Order Invoice</div>
+                </div>
+                <div style="margin-left:auto; min-width:180px;">
+                  <div class="muted">Order ID</div>
+                  <div style="font-weight:900;" id="invOrderId">-</div>
+                </div>
+              </div>
+
+              <div class="hr"></div>
+
+              <div class="grid2" style="align-items:start;">
+                <div>
+                  <div class="muted">Customer</div>
+                  <div style="font-weight:900;" id="invCustomerName">-</div>
+                  <div class="muted" style="margin-top:4px;" id="invCustomerPhone">-</div>
+                </div>
+                <div>
+                  <div class="muted">Delivery Address</div>
+                  <div style="font-weight:600; margin-top:4px;" id="invAddress">-</div>
+                </div>
+              </div>
+
+              <div class="hr"></div>
+
+              <div style="overflow:auto;">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Product</th>
+                      <th>Qty</th>
+                      <th>Unit</th>
+                      <th>Total</th>
+                    </tr>
+                  </thead>
+                  <tbody id="invItems"></tbody>
+                </table>
+              </div>
+
+              <div class="hr"></div>
+
+              <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
+                <div>
+                  <div class="muted">Payment</div>
+                  <div style="font-weight:900;" id="invPaymentStatus">PAID</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="muted">Grand Total</div>
+                  <div style="font-size:22px; font-weight:950;" id="invTotal">₹ 0</div>
+                </div>
+              </div>
+
+              <div style="margin-top:14px;" class="muted">
+                Pure, Natural, Chemical-Free. Thank you for choosing Sri Velva Naturals.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- QR Modal -->
+    <div class="modalOverlay" id="qrOverlay">
+      <div class="modal">
+        <div class="modalHeader">
+          <h3>Pay using QR</h3>
+          <button class="btn btn-ghost" type="button" id="btnCloseQr">Close</button>
+        </div>
+        <div class="muted" style="margin-top:10px;">
+          Scan the QR to pay your order total.
+        </div>
+        <div class="qrWrap">
+          <div id="qrcode"></div>
+          <div style="min-width:200px;">
+            <div class="muted">Amount</div>
+            <div style="font-weight:950; font-size:18px;" id="qrAmount">₹ 0</div>
+            <div class="hr"></div>
+            <div class="muted">UPI ID</div>
+            <div style="font-weight:900;" id="qrUpi">-</div>
+            <div class="muted" style="margin-top:10px; line-height:1.7;">
+              If your scanner asks, select UPI payments and proceed.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="section" style="padding-top:18px;">
+      <div class="container">
+        <div class="card" style="padding:18px;">
+          <div class="muted">© <span id="yearNow"></span> Sri Velva Naturals. All rights reserved.</div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+      const UPI_ID = "indran.22101994-3@oksbi";
+      const UPI_PN = "Sri Velva Naturals";
+
+      function money(n) {
+        const num = Number(n);
+        if (!Number.isFinite(num)) return "0";
+        return "₹ " + num.toLocaleString("en-IN");
+      }
+
+      function getOrderIdFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get("orderId");
+      }
+
+      function openQr(amount, orderId) {
+        const overlay = document.getElementById("qrOverlay");
+        const amountEl = document.getElementById("qrAmount");
+        const upiEl = document.getElementById("qrUpi");
+
+        overlay.style.display = "flex";
+        amountEl.textContent = money(amount);
+        upiEl.textContent = UPI_ID;
+
+        const payLink = `upi://pay?pa=${encodeURIComponent(UPI_ID)}&pn=${encodeURIComponent(UPI_PN)}&am=${encodeURIComponent(
+          String(amount)
+        )}&cu=INR&tn=${encodeURIComponent("Order " + orderId)}`;
+
+        const el = document.getElementById("qrcode");
+        el.innerHTML = "";
+        // qrcodejs renders synchronously
+        // eslint-disable-next-line no-undef
+        new QRCode(el, {
+          text: payLink,
+          width: 190,
+          height: 190,
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", async () => {
+        document.getElementById("yearNow").textContent = new Date().getFullYear();
+
+        const orderId = getOrderIdFromUrl();
+        if (!orderId) {
+          document.getElementById("orderConfirmLine").textContent = "Missing order id.";
+          return;
+        }
+
+        const res = await fetch(`/api/orders/${encodeURIComponent(orderId)}/invoice`);
+        const data = await res.json();
+        const order = data.order;
+        if (!order) {
+          document.getElementById("orderConfirmLine").textContent = "Order not found.";
+          return;
+        }
+
+        document.getElementById("orderConfirmLine").textContent =
+          `Order #${order.id} placed on ${new Date(order.order_date).toLocaleString()}.`;
+        document.getElementById("invOrderId").textContent = String(order.id);
+        document.getElementById("invCustomerName").textContent = order.customer_name || "-";
+        document.getElementById("invCustomerPhone").textContent = order.phone ? `Phone: ${order.phone}` : "-";
+        document.getElementById("invAddress").textContent = order.address || "-";
+        document.getElementById("invPaymentStatus").textContent = order.payment_status || "-";
+        document.getElementById("invTotal").textContent = money(order.total_amount);
+
+        const items = order.items || [];
+        const tbody = document.getElementById("invItems");
+        tbody.innerHTML = "";
+        items.forEach((it) => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td style="max-width:320px;">
+              <div style="font-weight:900;">${it.product_name}</div>
+              <div class="muted" style="margin-top:3px;">${it.category}</div>
+            </td>
+            <td>${it.quantity}</td>
+            <td class="muted">₹ ${Number(it.unit_price).toLocaleString("en-IN")}</td>
+            <td><strong>₹ ${Number(it.line_total).toLocaleString("en-IN")}</strong></td>
+          `;
+          tbody.appendChild(tr);
+        });
+
+        const btnPayNow = document.getElementById("btnPayNow");
+        const btnPrint = document.getElementById("btnPrint");
+        const btnCloseQr = document.getElementById("btnCloseQr");
+        const overlay = document.getElementById("qrOverlay");
+
+        btnPayNow.addEventListener("click", () => {
+          openQr(order.total_amount, order.id);
+        });
+        btnPrint.addEventListener("click", () => window.print());
+
+        btnCloseQr.addEventListener("click", () => {
+          overlay.style.display = "none";
+        });
+        overlay.addEventListener("click", (e) => {
+          if (e.target === overlay) overlay.style.display = "none";
+        });
+      });
+    </script>
+  </body>
+</html>
+

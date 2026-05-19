@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sri Velva Naturals</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <div class="nav">
+          <a class="brand" href="index.html" aria-label="Sri Velva Naturals Home">
+            <img src="/images/Logo.jpeg" alt="Sri Velva Naturals" />
+            <div class="brandText">
+              Sri Velva Naturals
+              <small>Pure • Natural • Cold Pressed Oils</small>
+            </div>
+          </a>
+
+          <button class="btn hamburger" type="button" data-hamburger aria-label="Open menu">
+            <span class="hamburgerLines"><span></span><span></span><span></span></span>
+          </button>
+
+          <nav class="navLinks" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin.html">Manage Menu</a>
+            <a class="btn btn-ghost" href="checkout.html" aria-label="Go to checkout">
+              <span class="cartMini">
+                Cart
+                <span class="cartCount" data-cart-count>0</span>
+              </span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="mobileMenu" data-mobile-menu>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="products.html">Products</a>
+          <a href="contact.html">Contact</a>
+          <a href="admin.html">Manage Menu</a>
+          <a href="checkout.html">Checkout</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="heroGrid">
+            <div class="card heroLeft fadeIn">
+              <div class="pill">
+                <span style="width:10px;height:10px;border-radius:999px;background:var(--gold);display:inline-block;"></span>
+                Trusted premium organic care
+              </div>
+              <h1 class="heroTitle">
+                Pure, Natural,
+                <em>Chemical-Free</em>
+              </h1>
+              <p class="heroLead">
+                Sri Velva Naturals brings you cold pressed oils and pure skin & hair care for a
+                luminous glow and stronger roots—naturally.
+              </p>
+              <div class="heroActions">
+                <a class="btn btn-primary" href="products.html">Explore Products</a>
+                <a class="btn btn-gold" href="contact.html">Order via WhatsApp</a>
+              </div>
+              <div class="heroBadges">
+                <div class="badge">Chemical-Free</div>
+                <div class="badge">Cold-Pressed</div>
+                <div class="badge">Traditional Extraction</div>
+                <div class="badge">Small Batch</div>
+              </div>
+            </div>
+
+            <div class="card heroRight fadeIn">
+              <div class="heroImage" aria-hidden="true"></div>
+              <div class="heroRightContent">
+                <div class="pill" style="background: rgba(255,255,255,.76);">
+                  <strong style="color:var(--primary2);">Today’s pick</strong>
+                  <span class="muted" id="heroPickText">Loading...</span>
+                </div>
+                <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
+                  <a class="btn btn-primary" href="products.html?category=oils">Oils</a>
+                  <a class="btn btn-primary" href="products.html?category=skin">Skin Care</a>
+                  <a class="btn btn-primary" href="products.html?category=hair">Hair Care</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="grid3" aria-label="Product categories">
+            <a class="card categoryTile fadeIn" href="products.html?category=oils">
+              <h3>Oils</h3>
+              <p>Cold pressed goodness for everyday nourishment.</p>
+              <div class="muted">Explore</div>
+            </a>
+            <a class="card categoryTile fadeIn" href="products.html?category=skin">
+              <h3>Skin Care</h3>
+              <p>Pure, chemical-free care for a luminous glow.</p>
+              <div class="muted">Explore</div>
+            </a>
+            <a class="card categoryTile fadeIn" href="products.html?category=hair">
+              <h3>Hair Care</h3>
+              <p>Strengthen roots and rejuvenate from within.</p>
+              <div class="muted">Explore</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="grid2">
+            <div class="card fadeIn" style="padding:18px;">
+              <h2 style="margin:0 0 10px; font-family:'Playfair Display', serif;">Why Choose Us</h2>
+              <p class="muted" style="line-height:1.8; margin:0;">
+                Our oils and care products are made with a focus on purity and tradition—so you
+                can enjoy premium natural results without harsh chemicals.
+              </p>
+              <div class="hr"></div>
+              <div class="grid2" style="gap:12px;">
+                <div class="pill"><strong>Pure</strong> <span class="muted">Natural ingredients</span></div>
+                <div class="pill"><strong>Chemical-Free</strong> <span class="muted">No harsh additives</span></div>
+                <div class="pill"><strong>Cold Pressed</strong> <span class="muted">Gentle extraction</span></div>
+                <div class="pill"><strong>Premium Care</strong> <span class="muted">Real business quality</span></div>
+              </div>
+            </div>
+
+            <div class="card fadeIn" style="padding:18px;">
+              <h2 style="margin:0 0 10px; font-family:'Playfair Display', serif;">Featured Products</h2>
+              <p class="muted" style="line-height:1.8; margin:0 0 14px;">
+                Carefully selected starter items to keep the menu focused and premium.
+              </p>
+              <div class="grid3" id="featuredProductsGrid" style="grid-template-columns: repeat(2, minmax(0, 1fr));"></div>
+              <div class="muted" style="margin-top:10px;">Add to cart or order via WhatsApp.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="card fadeIn" style="padding:18px;">
+            <h2 style="margin:0 0 8px; font-family:'Playfair Display', serif;">Customer Trust</h2>
+            <p class="muted" style="margin:0; line-height:1.8;">
+              Premium natural care you can rely on—crafted for consistent, gentle results.
+            </p>
+            <div class="hr"></div>
+            <div class="grid3">
+              <div class="pill"><strong>Natural</strong> <span class="muted">Cold pressed oils</span></div>
+              <div class="pill"><strong>Quality</strong> <span class="muted">Small batch production</span></div>
+              <div class="pill"><strong>Support</strong> <span class="muted">Easy WhatsApp ordering</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="section" style="padding-top:18px;">
+      <div class="container">
+        <div class="card" style="padding:18px;">
+          <div class="grid2" style="align-items:center;">
+            <div>
+              <div class="muted">Contact</div>
+              <div style="font-weight:800; margin-top:6px;">WhatsApp: +91 9629655289</div>
+              <div class="muted" style="margin-top:6px;">Order via WhatsApp or checkout on-site.</div>
+            </div>
+            <div style="display:flex; gap:12px; justify-content:flex-end; flex-wrap:wrap;">
+              <a class="btn btn-primary" href="products.html">Shop Now</a>
+              <a class="btn btn-gold" href="contact.html">Order via WhatsApp</a>
+            </div>
+          </div>
+          <div style="margin-top:14px;" class="muted">© <span id="yearNow"></span> Sri Velva Naturals. All rights reserved.</div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script>
+      const WA_PHONE = "919629655289";
+      function waLink(productName) {
+        const msg = "Hi Sri Velva Naturals, I would like to order: " + productName + ". Please share delivery and payment details.";
+        return "https://wa.me/" + WA_PHONE + "?text=" + encodeURIComponent(msg);
+      }
+
+      function renderProductCard(p) {
+        const imageUrl = window.getProductImageUrl ? window.getProductImageUrl(p) : `/images/${encodeURIComponent(p.image_path || "Logo.jpeg")}`;
+        const card = document.createElement("div");
+        card.className = "productCard card";
+        card.style.padding = "14px";
+        card.innerHTML = `
+          <div class="productImage">
+            <img src="${imageUrl}" alt="${p.name}" onerror="this.onerror=null;this.src='/images/Logo.jpeg';" />
+          </div>
+          <div class="productMeta">
+            <h4 style="font-size:16px;">${p.name}</h4>
+            <div class="price">₹ ${p.price}</div>
+          </div>
+          <p class="productDesc">${p.description || ""}</p>
+          <div class="productActions">
+            <button class="btn btn-primary" type="button" data-add="${p.id}">Add to Cart</button>
+            <a class="btn btn-gold" href="${waLink(p.name)}" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        `;
+        card.querySelector("[data-add]").addEventListener("click", () => {
+          addToCart(p.id, 1);
+          renderCartBadge();
+          alert("Added to cart: " + p.name);
+        });
+        return card;
+      }
+
+      async function loadFeatured() {
+        const grid = document.getElementById("featuredProductsGrid");
+        const heroPick = document.getElementById("heroPickText");
+        if (!grid) return;
+
+        const res = await fetch("/api/products");
+        const data = await res.json();
+        const products = data.products || [];
+
+        const byCat = (cat) => products.find((x) => x.category === cat);
+        const featured = ["oils", "skin", "hair"].map(byCat).filter(Boolean);
+
+        // If there are less than 3 for any reason, fill from remaining.
+        while (featured.length < 3 && featured.length < products.length) {
+          const next = products.find((x) => !featured.some((f) => f.id === x.id));
+          if (!next) break;
+          featured.push(next);
+        }
+
+        heroPick.textContent = featured[0] ? featured[0].name : "Premium Naturals";
+        grid.innerHTML = "";
+        featured.forEach((p) => grid.appendChild(renderProductCard(p)));
+      }
+
+      document.getElementById("yearNow").textContent = new Date().getFullYear();
+      loadFeatured().catch(() => {});
+    </script>
+  </body>
+</html>
+

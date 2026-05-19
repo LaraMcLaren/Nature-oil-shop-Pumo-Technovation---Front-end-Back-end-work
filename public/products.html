@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products - Sri Velva Naturals</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <div class="nav">
+          <a class="brand" href="index.html" aria-label="Sri Velva Naturals Home">
+            <img src="/images/Logo.jpeg" alt="Sri Velva Naturals" />
+            <div class="brandText">
+              Sri Velva Naturals
+              <small>Pure • Natural • Cold Pressed Oils</small>
+            </div>
+          </a>
+
+          <button class="btn hamburger" type="button" data-hamburger aria-label="Open menu">
+            <span class="hamburgerLines"><span></span><span></span><span></span></span>
+          </button>
+
+          <nav class="navLinks" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin.html">Manage Menu</a>
+            <a class="btn btn-ghost" href="checkout.html" aria-label="Go to checkout">
+              <span class="cartMini">
+                Cart
+                <span class="cartCount" data-cart-count>0</span>
+              </span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="mobileMenu" data-mobile-menu>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="products.html">Products</a>
+          <a href="contact.html">Contact</a>
+          <a href="admin.html">Manage Menu</a>
+          <a href="checkout.html">Checkout</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" style="padding-bottom: 18px;">
+        <div class="container">
+          <div class="card fadeIn" style="padding:18px;">
+            <h1 style="margin:0; font-family:'Playfair Display', serif;">Shop Products</h1>
+            <p class="muted" style="margin:8px 0 0; line-height:1.8;">
+              Pure, Natural, Chemical-Free care. Add to cart or order via WhatsApp.
+            </p>
+
+            <div class="filters" role="group" aria-label="Category filter">
+              <button class="btn filterBtn" type="button" data-filter="" aria-pressed="true">All</button>
+              <button class="btn filterBtn" type="button" data-filter="oils" aria-pressed="false">Oils</button>
+              <button class="btn filterBtn" type="button" data-filter="skin" aria-pressed="false">Skin Care</button>
+              <button class="btn filterBtn" type="button" data-filter="hair" aria-pressed="false">Hair Care</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top: 18px;">
+        <div class="container">
+          <div class="grid3" id="productsGrid"></div>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top: 0;">
+        <div class="container">
+          <div class="card fadeIn" style="padding:18px;">
+            <div class="grid2" style="align-items:center;">
+              <div>
+                <h3 style="margin:0 0 6px; font-family:'Playfair Display', serif;">Need help choosing?</h3>
+                <p class="muted" style="margin:0; line-height:1.8;">
+                  Chat with us on WhatsApp and we will guide you.
+                </p>
+              </div>
+              <div style="display:flex; gap:12px; justify-content:flex-end; flex-wrap:wrap;">
+                <a class="btn btn-gold" href="contact.html">WhatsApp Support</a>
+                <a class="btn btn-primary" href="checkout.html">Proceed to Checkout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="section" style="padding-top:18px;">
+      <div class="container">
+        <div class="card" style="padding:18px;">
+          <div class="grid2" style="align-items:center;">
+            <div>
+              <div class="muted">WhatsApp</div>
+              <div style="font-weight:800; margin-top:6px;">+91 9629655289</div>
+            </div>
+            <div style="display:flex; gap:12px; justify-content:flex-end; flex-wrap:wrap;">
+              <a class="btn btn-primary" href="index.html">Back to Home</a>
+              <a class="btn btn-gold" href="contact.html">Order via WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/products.js"></script>
+  </body>
+</html>
+
